@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>30 Travel Places</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      margin: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-content h3 {
+      margin: 0 0 10px;
+    }
+
+    .card-content p {
+      font-size: 14px;
+      color: #555;
+      margin: 5px 0;
+    }
+
+    .card-content button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #5c6bc0;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .card-content button:hover {
+      background-color: #3f51b5;
+    }
+
+    @media (max-width: 1024px) {
+      .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Top 30 Travel Places</h1>
+
+<div class="grid-container" id="grid"></div>
+
+<script>
+  const container = document.getElementById('grid');
+
+  const places = [
+    {
+      name: "Ooty",
+      img: "https://www.loholidays.com/cdn/shop/products/Botanical_Gardens_-_Ootacamund__Ooty__-_India_03.jpg?v=1489337582&width=1946",
+      food: "Varkey, Biryani",
+      days: "2-3 days",
+      budget: "₹8,000 - ₹12,000",
+      season: "October to June"
+      
+    },
+    {
+      name: "Manali",
+      img: "https://www.holidify.com/images/bgImages/MANALI.jpg",
+      food: "Siddu, Trout Fish",
+      days: "3-4 days",
+      budget: "₹10,000 - ₹15,000",
+      season: "October to February"
+    },
+    {
+      name: "Goa",
+      img: "https://4.imimg.com/data4/SR/DH/MY-10838749/-94048_9068.jpg",
+      food: "Prawn Balchão, Bebinca",
+      days: "3-5 days",
+      budget: "₹12,000 - ₹20,000",
+      season: "November to February"
+    },
+    {
+      name: "Kerala",
+      img: "https://www.thomascook.in/blog/wp-content/uploads/2024/12/Kerala.jpg",
+      food: "Appam with Stew, Kerala Sadya",
+      days: "4-6 days",
+      budget: "₹15,000 - ₹25,000",
+      season: "September to March"
+    },
+    {
+      name: "Leh",
+      img: "https://www.holidify.com/images/bgImages/LEH.jpg",
+      food: "Thukpa, Momos",
+      days: "5-7 days",
+      budget: "₹20,000 - ₹30,000",
+      season: "June to September"
+    },
+    {
+      name: "Jaipur",
+      img: "https://www.holidify.com/images/bgImages/JAIPUR.jpg",
+      food: "Dal Baati Churma, Ghewar",
+      days: "2-3 days",
+      budget: "₹8,000 - ₹12,000",
+      season: "October to March"
+    },
+    {
+      name: "Udaipur",
+      img: "https://www.holidify.com/images/bgImages/UDAIPUR.jpg",
+      food: "Laal Maas, Daal Baati",
+      days: "2-3 days",
+      budget: "₹10,000 - ₹15,000",
+      season: "September to March"
+    },
+    {
+      name: "Andaman",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu-4GeJTfUExd4IPEjogsK_H3Lb599SaGbqg&s",
+      food: "Seafood curry, Coconut prawns",
+      days: "4-6 days",
+      budget: "₹20,000 - ₹35,000",
+      season: "October to May"
+    },
+    {
+      name: "Darjeeling",
+      img: "https://www.holidify.com/images/bgImages/DARJEELING.jpg",
+      food: "Thukpa, Momos",
+      days: "2-3 days",
+      budget: "₹7,000 - ₹12,000",
+      season: "April to June, October to December"
+    },
+    {
+      name: "Rishikesh",
+      img: "https://www.holidify.com/images/bgImages/RISHIKESH.jpg",
+      food: "Aloo Poori, Chole Bhature",
+      days: "2-3 days",
+      budget: "₹6,000 - ₹10,000",
+      season: "September to April"
+    },
+    {
+  name: "Varanasi",
+  img: "https://www.holidify.com/images/bgImages/VARANASI.jpg",
+  food: "Kachori Sabzi, Malaiyyo",
+  days: "2-3 days",
+  budget: "₹6,000 - ₹10,000",
+  season: "November to February"
+},
+{
+  name: "Mysore",
+  img: "https://www.holidify.com/images/bgImages/MYSORE.jpg",
+  food: "Mysore Pak, Dosa",
+  days: "2-3 days",
+  budget: "₹7,000 - ₹12,000",
+  season: "October to February"
+},
+{
+  name: "Kodaikanal",
+  img: "https://www.holidify.com/images/bgImages/KODAIKANAL.jpg",
+  food: "South Indian Thali, Mushroom Biryani",
+  days: "3-4 days",
+  budget: "₹8,000 - ₹13,000",
+  season: "October to June"
+},
+{
+  name: "Nainital",
+  img: "https://www.holidify.com/images/bgImages/NAINITAL.jpg",
+  food: "Ras, Bhatt ki Churkani",
+  days: "2-3 days",
+  budget: "₹6,000 - ₹11,000",
+  season: "March to June, September to November"
+},
+{
+  name: "Agra",
+  img: "https://www.holidify.com/images/bgImages/AGRA.jpg",
+  food: "Petha, Mughlai Cuisine",
+  days: "1-2 days",
+  budget: "₹5,000 - ₹9,000",
+  season: "November to March"
+},
+{
+  name: "Rameswaram",
+  img: "https://www.holidify.com/images/bgImages/RAMESWARAM.jpg",
+  food: "South Indian Thali, Filter Coffee",
+  days: "2-3 days",
+  budget: "₹6,000 - ₹10,000",
+  season: "October to April"
+},
+{
+  name: "Puri",
+  img: "https://www.holidify.com/images/bgImages/PURI.jpg",
+  food: "Khichdi, Malpua",
+  days: "2-3 days",
+  budget: "₹5,000 - ₹9,000",
+  season: "November to February"
+},
+{
+  name: "Mahabalipuram",
+  img: "https://www.holidify.com/images/bgImages/MAHABALIPURAM.jpg",
+  food: "Fish Curry, Dosas",
+  days: "1-2 days",
+  budget: "₹4,000 - ₹8,000",
+  season: "November to February"
+},
+{
+  name: "Gokarna",
+  img: "https://www.holidify.com/images/bgImages/GOKARNA.jpg",
+  food: "Seafood, South Indian dishes",
+  days: "2-3 days",
+  budget: "₹6,000 - ₹10,000",
+  season: "October to March"
+},
+{
+  name: "Kanyakumari",
+  img: "https://www.holidify.com/images/bgImages/KANYAKUMARI.jpg",
+  food: "Banana Chips, Seafood",
+  days: "2 days",
+  budget: "₹5,000 - ₹9,000",
+  season: "October to March"
+},
+{
+  name: "Tirupati",
+  img: "https://www.holidify.com/images/bgImages/TIRUPATI.jpg",
+  food: "Laddu, Andhra meals",
+  days: "1-2 days",
+  budget: "₹4,000 - ₹7,000",
+  season: "September to March"
+},
+{
+  name: "Dwarka",
+  img: "https://www.holidify.com/images/bgImages/DWARKA.jpg",
+  food: "Gujarati Thali, Farsan",
+  days: "2 days",
+  budget: "₹6,000 - ₹10,000",
+  season: "October to March"
+},
+{
+  name: "Murudeshwar",
+  img: "https://www.holidify.com/images/bgImages/MURUDESHWAR.jpg",
+  food: "Seafood, South Indian meals",
+  days: "1-2 days",
+  budget: "₹5,000 - ₹9,000",
+  season: "October to February"
+},
+{
+  name: "Jagannath Puri",
+  img: "https://www.holidify.com/images/bgImages/PURI.jpg",
+  food: "Mahaprasad, Khaja",
+  days: "2-3 days",
+  budget: "₹6,000 - ₹10,000",
+  season: "October to February"
+},
+{
+  name: "Varkala",
+  img: "https://www.holidify.com/images/bgImages/VARKALA.jpg",
+  food: "Seafood, Kerala Sadya",
+  days: "2-3 days",
+  budget: "₹6,000 - ₹11,000",
+  season: "October to March"
+},
+{
+  name: "Srisailam",
+  img: "https://www.holidify.com/images/bgImages/SRISAILAM.jpg",
+  food: "Andhra Thali, Biryani",
+  days: "2-3 days",
+  budget: "₹6,000 - ₹12,000",
+  season: "October to March"
+},
+{
+  name: "Basara",
+  img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/0c/df/63/screenshot-2019-08-30.jpg?w=900&h=500&s=1",
+  food: "Telangana Thali, Ghee Rice",
+  days: "1-2 days",
+  budget: "₹3,000 - ₹6,000",
+  season: "November to February"
+},
+{
+  name: "Warangal",
+  img: "https://www.holidify.com/images/bgImages/WARANGAL.jpg",
+  food: "Hyderabadi Biryani, Haleem",
+  days: "2-3 days",
+  budget: "₹5,000 - ₹8,000",
+  season: "October to March"
+},
+{
+  name: "Hyderabad",
+  img: "https://www.holidify.com/images/bgImages/HYDERABAD.jpg",
+  food: "Hyderabadi Biryani, Kebabs",
+  days: "3-4 days",
+  budget: "₹8,000 - ₹15,000",
+  season: "November to February"
+},
+{
+  name: "Pochampally",
+  img: "https://craftribute.com/cdn/shop/files/Sq_Grey-Maroon_6357.0.jpg?v=1683718842",
+  food: "Telangana Special Thali, Rice Dishes",
+  days: "1-2 days",
+  budget: "₹4,000 - ₹7,000",
+  season: "October to March"
+}
+
+
+
+   
+
+    // Add the remaining 20 places in the same format below
+  ];
+
+  places.forEach((place) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <img src="${place.img}" alt="${place.name}">
+      <div class="card-content">
+        <h3>${place.name}</h3>
+        <p><strong>Best Food:</strong> ${place.food}</p>
+        <p><strong>Trip Duration:</strong> ${place.days}</p>
+        <p><strong>Budget:</strong> ${place.budget}</p>
+        <p><strong>Best Season:</strong> ${place.season}</p>
+        <button onclick="alert('More about ${place.name} coming soon!')">Read More</button>
+        
+      </div>
+    `;
+    container.appendChild(card);
+  });
+</script>
+
+</body>
+</html>

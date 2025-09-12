@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Blog Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      background: #f4f4f4;
+    }
+    h1 {
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    textarea, input {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    .blog-post {
+      margin-top: 20px;
+      padding: 15px;
+      background: #e8f4fd;
+      border-left: 4px solid #3498db;
+      border-radius: 5px;
+    }
+    .blog-title {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Write a Blog</h1>
+  <input type="text" id="title" placeholder="Blog Title" />
+  <textarea id="content" rows="6" placeholder="Write your blog here..."></textarea>
+  <button onclick="saveBlog()">Save Blog</button>
+
+  <h2>Read Blogs</h2>
+  <div id="blogsContainer"></div>
+</div>
+
+<script>
+  function saveBlog() {
+    const title = document.getElementById('title').value.trim();
+    const content = document.getElementById('content').value.trim();
+
+    if (!title || !content) {
+      alert("Please fill in both title and content.");
+      return;
+    }
+
+    const blog = { title, content };
+    let blogs = JSON.parse(localStorage.getItem('blogs')) || [];
+    blogs.push(blog);
+    localStorage.setItem('blogs', JSON.stringify(blogs));
+
+    document.getElementById('title').value = '';
+    document.getElementById('content').value = '';
+
+    displayBlogs();
+  }
+
+  function displayBlogs() {
+    const container = document.getElementById('blogsContainer');
+    const blogs = JSON.parse(localStorage.getItem('blogs')) || [];
+
+    container.innerHTML = '';
+    blogs.forEach((blog, index) => {
+      container.innerHTML += `
+        <div class="blog-post">
+          <div class="blog-title">${blog.title}</div>
+          <div>${blog.content}</div>
+        </div>
+      `;
+    });
+  }
+
+  // Load blogs on page load
+  window.onload = displayBlogs;
+</script>
+
+</body>
+</html>
