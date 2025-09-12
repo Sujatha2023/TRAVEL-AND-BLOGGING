@@ -2,7 +2,7 @@
 
 PROJECT NAME : Travel and Blogging 🌍✈
 
-LANGUAGES USED
+# LANGUAGES USED
 
 🖋 HTML – for structure
 
@@ -11,7 +11,7 @@ LANGUAGES USED
 ⚡ JavaScript – for interactivity
 
 
-ABOUT THE PROJECT
+# ABOUT THE PROJECT
 
 Travel and Blogging is a dynamic web app that helps users plan and enjoy their journeys. It acts as a personal travel guide by:
 
@@ -24,7 +24,7 @@ Providing a smooth, user-friendly interface for easy navigation.
 Helping travelers explore hidden gems and connect with others.
 
 
-KEY FEATURES
+# KEY FEATURES
 
 🔍 Smart Search – find destinations by budget, weather, or popularity.
 
@@ -37,7 +37,7 @@ KEY FEATURES
 🌍 Global Scope – adaptable for travelers worldwide.
 
 
-Future Scope / API Integrations
+# Future Scope / API Integrations
 
 This project can be enhanced using powerful APIs:
 
@@ -54,3 +54,10 @@ This project can be enhanced using powerful APIs:
 🍴 Yelp / Zomato API – food & restaurant guides.
 
 🎟 Eventbrite API – local events & festivals
+
+# OUTPUT OF THE PPROJECT
+
+![Image](https://github.com/user-attachments/assets/250e1847-d513-465c-bc6e-4cb6e020afa4)
+
+
+
