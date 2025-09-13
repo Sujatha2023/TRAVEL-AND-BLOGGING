@@ -59,5 +59,15 @@ This project can be enhanced using powerful APIs:
 
 ![Image](https://github.com/user-attachments/assets/7ea0fa99-6088-4910-835b-678f6ba38448)
 
+![Image](https://github.com/user-attachments/assets/ed177823-0ab7-4a60-aa84-5adc52c784dc)
+
+![Image](https://github.com/user-attachments/assets/d0244023-420b-4581-aadc-3697430b808a)
+
+![Image](https://github.com/user-attachments/assets/972276b7-e088-4ebf-b7de-2cbeb183ec6d)
+
+![Image](https://github.com/user-attachments/assets/e831b25a-620f-43a3-9774-062e1747c6cb)
+
+![Image](https://github.com/user-attachments/assets/0eca40ac-8c15-4fc6-82ae-7c5a606f6b46)
+
 
 
