@@ -53,8 +53,6 @@ This project can be enhanced using powerful APIs:
 
 🍴 Yelp / Zomato API – food & restaurant guides.
 
-🎟 Eventbrite API – local events & festivals
-
 # output
 
 ![Image](https://github.com/user-attachments/assets/250e1847-d513-465c-bc6e-4cb6e020afa4)
