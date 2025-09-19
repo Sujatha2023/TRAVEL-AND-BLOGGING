@@ -68,6 +68,9 @@ This project can be enhanced using powerful APIs:
 ![Image](https://github.com/user-attachments/assets/ed177823-0ab7-4a60-aa84-5adc52c784dc)
 
 ![Image](https://github.com/user-attachments/assets/0eca40ac-8c15-4fc6-82ae-7c5a606f6b46)
+# output
+https://github.com/user-attachments/assets/4ece9cb6-fd76-4fb2-af1f-28b2d2a1dd38
+
 
 
 
